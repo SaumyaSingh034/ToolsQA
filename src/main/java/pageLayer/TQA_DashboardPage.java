@@ -39,27 +39,27 @@ public class TQA_DashboardPage {
         return new ElementPage();
     }
 
-    public void clickOnFormCard(){
+    public FormPage clickOnFormCard(){
         formCard.click();
         return new FormPage();
     }
 
-    public void clickOnAlert(){
+    public AlertPage clickOnAlert(){
         alertFrameWindowCard.click();
-        retun new AlertPage();
+        return new AlertPage();
     }
 
-    public void clickOnWidgets(){
+    public WidgetPage clickOnWidgets(){
         widgetCard.click();
         return new WidgetPage();
     }
 
-    public void clickOnInteractions(){
+    public InteractionPage clickOnInteractions(){
         interactionCard.click();
         return new InteractionPage();
     }
 
-    public void clickOnBookStore(){
+    public BookStorePage clickOnBookStore(){
         bookStoreCard.click();
         return new BookStorePage();
     }
