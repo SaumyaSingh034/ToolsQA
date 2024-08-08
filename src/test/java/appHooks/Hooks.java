@@ -19,25 +19,44 @@ public class Hooks {
     private ConfigReader config;
     Properties prop;
     String browserName;
-    String applicationURL;
+    public String applicationURL;
 
     @Before(order = 0)
-    public void setUpProperties(){
+    public void setUpProperties() {
         config = new ConfigReader();
         prop = config.loadProperties();
         browserName = prop.getProperty("browser");
         applicationURL = prop.getProperty("url");
 
     }
-    @Before(order=1)
-    public void setUp(){
+
+    @Before(order = 1)
+    public void setUp() {
         factory = new DriverFactory();
         factory.initializeDriver(browserName);
+        driver.manage().deleteAllCookies();
+
+        driver.get(applicationURL);
+
+        driver.manage().window().maximize();
+        try {
+            driver.manage().wait(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @After
-    public void endTest(Scenario sc){
-        final byte[] screenshot =  ((TakesScreenshot)DriverFactory.driver).getScreenshotAs(OutputType.BYTES);
-        DriverFactory.driver.quit();
+    @After(order = 0)
+    public void closeBrowser() {
+        driver.quit();
+    }
+
+    @After(order = 1)
+    public void endTest(Scenario scenario) {
+        if (scenario.isFailed()) {
+            String screenshotName = scenario.getName().replaceAll(" ", "_");
+            byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(sourcePath, "image/png", screenshotName);
+        }
     }
 }

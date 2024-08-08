@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import appHooks.Hooks;
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +11,7 @@ public class DashBoardStepDef extends DriverFactory{
     TQA_DashboardPage dashboardPage = new TQA_DashboardPage(driver);
     @Given("user is on the Dashboard Page")
     public void userIsOnTheDashboardPage() {
-       driver.get("");
+       System.out.println("URL : "+driver.getCurrentUrl());
     }
 
     @When("user gets the title of the page")
