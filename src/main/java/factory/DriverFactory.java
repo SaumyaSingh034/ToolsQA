@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverFactory {
 
-    public  WebDriver driver;
+    public static WebDriver driver;
 
     public WebDriver initializeDriver(String browser){
         if(browser.equalsIgnoreCase("Chrome")){

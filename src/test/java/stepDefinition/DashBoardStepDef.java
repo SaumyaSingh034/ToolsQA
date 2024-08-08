@@ -4,19 +4,18 @@ import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import pageLayer.TQA_DashboardPage;
 
-public class dashboardStepdef  {
-    WebDriver driver;
-    TQA_DashboardPage dashboardPage = new TQA_DashboardPage(driver;)
+public class DashBoardStepDef extends DriverFactory{
+    TQA_DashboardPage dashboardPage = new TQA_DashboardPage(driver);
     @Given("user is on the Dashboard Page")
     public void userIsOnTheDashboardPage() {
-
+       driver.get("");
     }
 
     @When("user gets the title of the page")
     public void userGetsTheTitleOfThePage() {
+        System.out.println("User get title of the Page: "+driver.getTitle());
 
     }
 
