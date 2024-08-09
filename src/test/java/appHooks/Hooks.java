@@ -33,17 +33,12 @@ public class Hooks {
     @Before(order = 1)
     public void setUp() {
         factory = new DriverFactory();
-        factory.initializeDriver(browserName);
+        driver = factory.initializeDriver(browserName);
         driver.manage().deleteAllCookies();
 
         driver.get(applicationURL);
 
         driver.manage().window().maximize();
-        try {
-            driver.manage().wait(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @After(order = 0)
