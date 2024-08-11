@@ -37,31 +37,33 @@ public class ElementsStepDef extends DriverFactory {
     }
 
     @And("user enters fullName as {string}")
-    public void userEntersFullNameAs(String arg0) {
-        
+    public void userEntersFullNameAs(String fullName) {
+        elementPage.enterFullName(fullName);
     }
 
     @And("user enters email as {string}")
-    public void userEntersEmailAs(String arg0) {
-        
+    public void userEntersEmailAs(String userEmail) {
+        elementPage.emailId(userEmail);
     }
 
     @And("user enters current address as {string}")
-    public void userEntersCurrentAddressAs(String arg0) {
-        
+    public void userEntersCurrentAddressAs(String currentAdd) {
+        elementPage.completeAddress(currentAdd);
     }
 
     @And("user enters permanent address as {string}")
-    public void userEntersPermanentAddressAs(String arg0) {
+    public void userEntersPermanentAddressAs(String permanentAdd) {
+        elementPage.permanenetAddress(permanentAdd);
         
     }
 
     @And("user clicks on submit btn")
     public void userClicksOnSubmitBtn() {
-        
+        elementPage.submitBtn();
     }
 
     @Then("All the user data is shown below")
     public void allTheUserDataIsShownBelow() {
+        elementPage.outputDisplayed();
     }
 }

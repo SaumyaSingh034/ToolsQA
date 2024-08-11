@@ -63,7 +63,7 @@ public class ElementPage {
         driver.findElement(submitButton).click();
     }
 
-    private void outputDisplayed(){
+    public void outputDisplayed(){
         driver.findElement(output).isDisplayed();
         System.out.println(driver.findElement(output).getText());
     }
