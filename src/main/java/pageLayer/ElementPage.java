@@ -6,7 +6,10 @@ import org.openqa.selenium.WebDriver;
 public class ElementPage {
 
     private WebDriver driver;
-    TQA_DashboardPage dashboardPage;
+
+    public ElementPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     private String heading;
     private By header = By.id("Ad.Plus-970x250-1");
@@ -19,9 +22,50 @@ public class ElementPage {
     private By brokenLkn = By.id("item-6");
     private By upload = By.id("item-7");
     private By dynamicProperties = By.id("item-8");
+    private By fullName = By.id("userName");
+    private By emailID = By.id("userEmail");
+    private By cAdd = By.id("currentAddress");
 
-    public void getHeader(){
-        heading = driver.findElement(header).getText();
+    private By pAdd = By.id("permanentAddress");
+    private By submitButton = By.id("submit");
+
+    private By output = By.id("output");
+
+    public String getHeader() {
+        return driver.findElement(header).getText();
+    }
+
+    public void clickOnElementsList(String elementName) {
+        if (elementName.equalsIgnoreCase("Text Box"))
+            driver.findElement(textBox).click();
+
+    }
+
+    public void enterFullName(String name) {
+        driver.findElement(fullName).sendKeys(name);
+    }
+
+    public void emailId(String email) {
+        driver.findElement(emailID).sendKeys(email);
+    }
+
+    public void completeAddress(String address) {
+        driver.findElement(cAdd).sendKeys(address);
+
+    }
+
+    public void permanenetAddress(String pAddress) {
+        driver.findElement(pAdd).sendKeys(pAddress);
+
+    }
+
+    public void submitBtn() {
+        driver.findElement(submitButton).click();
+    }
+
+    private void outputDisplayed(){
+        driver.findElement(output).isDisplayed();
+        System.out.println(driver.findElement(output).getText());
     }
 
 }

@@ -21,7 +21,7 @@ public class TQA_DashboardPage {
 
     public ElementPage clickOnElementCard(){
         cardList.get(0).click();
-        return new ElementPage();
+        return new ElementPage(driver);
     }
 
     public FormPage clickOnFormCard(){
