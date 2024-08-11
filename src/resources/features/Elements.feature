@@ -19,3 +19,11 @@ Feature: Tools QA Element Verification
       And user enters permanent address as "New Delhi"
       And user clicks on submit btn
       Then All the user data is shown below
+
+
+  Scenario: User clicks on check box and add some data
+    Given user is on the "Elements" Dashboard Page
+    When user clicks on "Check Box" under Elements List
+    And user expands "Home"
+    And user expands "Desktop"
+    And user selects Desktop and Downloads

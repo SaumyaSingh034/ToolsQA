@@ -66,4 +66,14 @@ public class ElementsStepDef extends DriverFactory {
     public void allTheUserDataIsShownBelow() {
         elementPage.outputDisplayed();
     }
+
+    @And("user expands {string}")
+    public void userExpands(String arg0) {
+
+
+    }
+
+    @And("user selects Desktop and Downloads")
+    public void userSelectsDesktopAndDownloads() {
+    }
 }

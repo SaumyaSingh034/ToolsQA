@@ -1,6 +1,7 @@
 package pageLayer;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class ElementPage {
@@ -27,9 +28,11 @@ public class ElementPage {
     private By cAdd = By.id("currentAddress");
 
     private By pAdd = By.id("permanentAddress");
-    private By submitButton = By.id("submit");
+    private By submitButton = By.xpath("//button[@id='submit']");
 
     private By output = By.id("output");
+
+    private By expandHome = By.xpath("//button[@aria-label='Toggle']");
 
     public String getHeader() {
         return driver.findElement(header).getText();
@@ -38,6 +41,8 @@ public class ElementPage {
     public void clickOnElementsList(String elementName) {
         if (elementName.equalsIgnoreCase("Text Box"))
             driver.findElement(textBox).click();
+        else if (elementName.equalsIgnoreCase("Check Box"))
+            driver.findElement(checkbox).click();
 
     }
 
@@ -60,6 +65,8 @@ public class ElementPage {
     }
 
     public void submitBtn() {
+        JavascriptExecutor js =(JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,350)","");
         driver.findElement(submitButton).click();
     }
 
@@ -67,5 +74,9 @@ public class ElementPage {
         driver.findElement(output).isDisplayed();
         System.out.println(driver.findElement(output).getText());
     }
+
+public void expandHome(){
+        driver.findElement(expandHome).click();
+}
 
 }
