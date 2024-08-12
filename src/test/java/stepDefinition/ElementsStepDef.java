@@ -68,12 +68,19 @@ public class ElementsStepDef extends DriverFactory {
     }
 
     @And("user expands {string}")
-    public void userExpands(String arg0) {
+    public void userExpands(String text) {
+        if(text.equalsIgnoreCase("home")){
+            elementPage.expandHome();
+        } else if (text.equalsIgnoreCase("Desktop")) {
+            elementPage.expandDesktop();
+
+        }
 
 
     }
 
     @And("user selects Desktop and Downloads")
     public void userSelectsDesktopAndDownloads() {
+        elementPage.selectCheckBox();
     }
 }

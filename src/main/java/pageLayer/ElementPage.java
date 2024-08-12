@@ -3,6 +3,9 @@ package pageLayer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class ElementPage {
 
@@ -32,7 +35,11 @@ public class ElementPage {
 
     private By output = By.id("output");
 
-    private By expandHome = By.xpath("//button[@aria-label='Toggle']");
+    private By expand= By.xpath("//button[@aria-label='Toggle']");
+
+    private By checkBox = By.xpath("//span[@class='rct-checkbox']");
+    List<WebElement> expandList;
+    List<WebElement> checkBoxList;
 
     public String getHeader() {
         return driver.findElement(header).getText();
@@ -76,7 +83,26 @@ public class ElementPage {
     }
 
 public void expandHome(){
-        driver.findElement(expandHome).click();
+        expandList = driver.findElements(expand);
+        expandList.get(0).click();
 }
+
+    public void expandDesktop(){
+        expandList = driver.findElements(expand);
+        expandList.get(1).click();
+    }
+
+    public void selectCheckBox(){
+        checkBoxList = driver.findElements(checkBox);
+        System.out.println("Home : "+checkBoxList.get(0).isSelected());
+        checkBoxList.get(0).click();
+        System.out.println("Home : "+checkBoxList.get(0).isSelected());
+        System.out.println("Desktop : "+checkBoxList.get(1).isSelected());
+        checkBoxList.get(1).click();
+        System.out.println("Desktop : "+checkBoxList.get(1).isSelected());
+        System.out.println("Download : "+checkBoxList.get(3).isSelected());
+        checkBoxList.get(3).click();
+        System.out.println("Download : "+checkBoxList.get(3).isSelected());
+    }
 
 }
