@@ -26,7 +26,7 @@ public class TQA_DashboardPage {
 
     public FormPage clickOnFormCard(){
         cardList.get(1).click();
-        return new FormPage();
+        return new FormPage(driver);
     }
 
     public AlertPage clickOnAlert(){
