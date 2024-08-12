@@ -57,6 +57,23 @@ public class FormPage {
     public void enterEmail(String email){
         userEmail.sendKeys(email);
     }
+    public void clickOnRadioBtn(String gender){
+        if(gender.equalsIgnoreCase("Male"))
+            genderMale.click();
+        else if (gender.equalsIgnoreCase("Female")) {
+            genderFemale.click();
+
+        }
+        else {
+            genderOther.click();
+        }
+    }
+
+    public void enterMobileNumber(String mobile){
+        mobileNo.sendKeys(mobile);
+    }
+
+
 
 
 
