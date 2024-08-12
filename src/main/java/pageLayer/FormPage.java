@@ -37,7 +37,27 @@ public class FormPage {
     @FindBy(id="subjectsContainer")
     private WebElement subject;
 
+    @FindBy(xpath = "//div[@id='hobbiesWrapper']")
+    private WebElement hobbies;
+
     @FindBy(id="currentAddress")
     private WebElement address;
+
+    @FindBy(xpath="//*[text()='Select State']")
+    private WebElement selectState;
+
+    @FindBy(xpath = "//*[text()='Select City']")
+    private WebElement selectCity;
+
+    public void entersFullName(String fName, String lName){
+        firstName.sendKeys(fName);
+        lastName.sendKeys(lName);
+    }
+
+    public void enterEmail(String email){
+        userEmail.sendKeys(email);
+    }
+
+
 
 }
