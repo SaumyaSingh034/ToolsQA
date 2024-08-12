@@ -73,6 +73,10 @@ public class FormPage {
         mobileNo.sendKeys(mobile);
     }
 
+    public void entersSubject(String subj){
+
+    }
+
 
 
 
