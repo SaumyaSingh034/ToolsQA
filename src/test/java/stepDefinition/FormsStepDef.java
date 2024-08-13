@@ -35,6 +35,7 @@ public class FormsStepDef  extends DriverFactory {
 
     @When("select hobbies {string}")
     public void select_hobbies(String hobbies) {
+        formPage.hobbies(hobbies);
 
     }
 }

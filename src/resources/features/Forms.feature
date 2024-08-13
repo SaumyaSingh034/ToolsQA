@@ -11,6 +11,6 @@ Feature: Tools QA Form Verification
       And user enters email as "saumya@gmail.com"
       And select "Female" radio btn
       And enters mobile Number "844798882"
-      And enters subject "Physics"
+      And enters subject "Phys"
       And select hobbies "Music"
       And user enters current address as "New Delhi"
