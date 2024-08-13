@@ -1,12 +1,16 @@
 package pageLayer;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLDocument;
 
 public class FormPage {
     WebDriver driver;
+    Actions action ;
     public FormPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -74,7 +78,15 @@ public class FormPage {
     }
 
     public void entersSubject(String subj){
+        subject.sendKeys(subj);
+       action = new Actions(driver);
+       action.keyDown(Keys.ARROW_DOWN).build().perform();
 
+    }
+
+    public void uploadPhotograph(){
+        HTMLDocument doc = null;
+        doc.getElementsByName("name")
     }
 
 
