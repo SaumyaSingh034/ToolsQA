@@ -38,4 +38,9 @@ public class FormsStepDef  extends DriverFactory {
         formPage.hobbies(hobbies);
 
     }
+
+    @When("user clicks on  Practice Form")
+    public void userClicksOnPracticeForm() {
+        formPage.clickOnPracticeFormPage();
+    }
 }

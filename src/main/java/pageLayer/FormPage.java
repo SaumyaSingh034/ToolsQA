@@ -17,6 +17,9 @@ public class FormPage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id="item-0")
+    private WebElement practiceForm;
+
     @FindBy(id = "firstName")
     private WebElement firstName;
 
@@ -65,6 +68,10 @@ public class FormPage {
 
     @FindBy(id="uploadPicture")
     private WebElement picture;
+
+    public void clickOnPracticeFormPage(){
+        practiceForm.click();
+    }
 
     public void entersFullName(String fName, String lName) {
         firstName.sendKeys(fName);

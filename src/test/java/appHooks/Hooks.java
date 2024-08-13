@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import utilities.ConfigReader;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
@@ -39,6 +40,7 @@ public class Hooks {
         driver.get(applicationURL);
 
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @After(order = 0)

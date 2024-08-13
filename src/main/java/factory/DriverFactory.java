@@ -18,7 +18,7 @@ public class DriverFactory {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().deleteAllCookies();
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 //            Wait wait = new FluentWait(driver).withTimeout(20,TimeUnit.SECONDS)
 //                    .pollingEvery(5, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 

@@ -7,6 +7,7 @@ Feature: Tools QA Form Verification
 
     Scenario: Fill the form with valid data
       Given user is on the "Forms" Dashboard Page
+      When user clicks on  Practice Form
       When user enters first Name as "Saumya" and lastname as "Singh"
       And user enters email as "saumya@gmail.com"
       And select "Female" radio btn
